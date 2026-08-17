@@ -438,6 +438,37 @@ td.effect b{color:var(--ink);font-weight:600;}
   .dashacard,.yogacard,.numgrid,.numsyn{animation:lineup .8s cubic-bezier(.22,1,.36,1) both;}
 }
 
+/* ---------- PAGES 4-6 ---------- */
+.remgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:relative;z-index:1;}
+.remcard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 13px;position:relative;overflow:hidden;}
+.remcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent 70%);}
+.remcard .rp{font-size:10.5px;font-weight:800;color:var(--title);}
+.remcard .rw{font-size:6.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin:2px 0 9px;}
+.rrow{display:flex;gap:8px;font-size:8px;line-height:1.5;color:var(--muted);margin-bottom:6px;}
+.rrow .rk{flex:0 0 44px;font-size:6.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);padding-top:1px;}
+.rrow b{color:var(--ink);font-weight:600;}
+.remnote{margin-top:8px;font-size:7.5px;line-height:1.55;color:#B295A0;border:1px dashed var(--border);border-radius:6px;padding:8px 12px;position:relative;z-index:1;}
+.cfields{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;position:relative;z-index:1;}
+.cfield{background:var(--card);border:1px dashed #E5BFCB;border-radius:8px;padding:10px 12px;}
+.cfield .fl{font-size:6.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-bottom:12px;}
+.cfield .fline{height:12px;border-bottom:1px dotted #C9A5B1;}
+.compat{display:grid;grid-template-columns:190px 1fr;gap:10px;margin-top:8px;align-items:stretch;position:relative;z-index:1;}
+.dialcard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.dialcap{font-size:6.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:8px;text-align:center;line-height:1.6;}
+.verdicts{display:flex;gap:8px;margin-top:8px;position:relative;z-index:1;}
+.verdict{flex:1;background:#FBEDF1;border:1px solid var(--border);border-radius:6px;padding:7px 10px;font-size:7px;line-height:1.5;color:var(--muted);}
+.verdict b{display:block;font-size:8px;color:var(--ink);margin-bottom:2px;}
+.ladder{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;position:relative;z-index:1;}
+.lstep{flex:1;}
+.lstep .lv{font-size:14px;font-weight:800;color:var(--gold);}
+.lstep .lk{font-size:6.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:2px;}
+.larr{color:var(--pink);font-size:13px;font-weight:800;}
+.rules{border:1px solid rgba(201,134,31,.5);background:rgba(201,134,31,.06);border-radius:8px;padding:12px 16px;font-size:8.5px;line-height:1.75;color:var(--muted);margin-top:12px;position:relative;z-index:1;}
+.rules b{color:var(--ink);font-weight:700;}
+@media screen{
+  .remgrid,.cfields,.compat,.verdicts,.ladder,.rules{animation:lineup .8s cubic-bezier(.22,1,.36,1) both;}
+}
+
 /* ---------- TOOLBAR (screen only) ---------- */
 .toolbar{
   position:fixed;
@@ -530,7 +561,7 @@ td.effect b{color:var(--ink);font-weight:600;}
     overflow:visible;
   }
   .toolbar,.petal{display:none !important;}
-  .page2,.page3{page-break-before:always;}
+  .page2,.page3,.page4,.page5,.page6{page-break-before:always;}
   .branch{animation:none;}
   *{animation:none !important;}
 }
@@ -959,6 +990,150 @@ td.effect b{color:var(--ink);font-weight:600;}
   <div class="foot">
     <span>Daśā computed from Moon in Hasta nakṣatra (lord Moon, balance 2.61y at birth) · 365.25-day years · Numerology: Pythagorean name values, Vedic moolānk/bhāgyānk.</span>
     <span style="white-space:nowrap">Page 3 · Timing, Yogas &amp; Numbers</span>
+  </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="sheet page4">
+  <div class="seclabel"><span class="num">09</span><span class="txt">Jupiter Mahādaśā Map · 2028–2044</span><span class="rule"></span></div>
+  <table>
+    <colgroup><col style="width:15%"><col style="width:21%"><col style="width:9%"><col style="width:55%"></colgroup>
+    <thead>
+      <tr><th>Period</th><th>Window</th><th>Span</th><th>Strategic Focus</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="planet">Ju–Jupiter</td><td class="sign">Mar 2028 – May 2030</td><td class="house">2.1y</td><td class="effect"><b>Foundation of authority.</b> Launch the flagship brand — reputation compounds fastest here.</td></tr>
+      <tr><td class="planet">Ju–Saturn</td><td class="sign">May 2030 – Nov 2032</td><td class="house">2.5y</td><td class="effect"><b>Institutionalise.</b> Systems, contracts, infrastructure — slow but irreversible gains.</td></tr>
+      <tr><td class="planet">Ju–Mercury</td><td class="sign">Nov 2032 – Feb 2035</td><td class="house">2.3y</td><td class="effect"><b>Commerce &amp; scale.</b> Budha-Āditya fires — products, licensing and content multiply income.</td></tr>
+      <tr><td class="planet">Ju–Ketu</td><td class="sign">Feb 2035 – Jan 2036</td><td class="house">0.9y</td><td class="effect"><b>Prune &amp; focus.</b> Exit weak lines; research-led reinvention.</td></tr>
+      <tr><td class="planet">Ju–Venus</td><td class="sign">Jan 2036 – Sep 2038</td><td class="house">2.7y</td><td class="effect"><b>Premium expansion.</b> Brand, luxury clientele, partnerships — the wealth peak of the daśā.</td></tr>
+      <tr><td class="planet">Ju–Sun</td><td class="sign">Sep 2038 – Jul 2039</td><td class="house">0.8y</td><td class="effect"><b>Recognition.</b> Awards, public authority, a leadership platform.</td></tr>
+      <tr><td class="planet">Ju–Moon</td><td class="sign">Jul 2039 – Nov 2040</td><td class="house">1.3y</td><td class="effect"><b>Markets &amp; audience.</b> The 7H Moon brings mass visibility and defining alliances.</td></tr>
+      <tr><td class="planet">Ju–Mars</td><td class="sign">Nov 2040 – Oct 2041</td><td class="house">0.9y</td><td class="effect"><b>Bold execution.</b> NBRY Mars — decisive acquisitions and wins.</td></tr>
+      <tr><td class="planet">Ju–Rahu</td><td class="sign">Oct 2041 – Mar 2044</td><td class="house">2.4y</td><td class="effect"><b>Unconventional apex.</b> Global and deep-tech leaps — keep governance tight.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="seclabel"><span class="num">10</span><span class="txt">Remedies · Weak &amp; Watch-Flagged Planets</span><span class="rule"></span></div>
+  <div class="remgrid">
+    <div class="remcard" data-testid="remedy-mars">
+      <div class="rp">Mars · Maṅgala</div>
+      <div class="rw">Debilitated · NBRY · 5H</div>
+      <div class="rrow"><span class="rk">Gem</span><span><b>Red Coral (Moonga)</b>, 5–7 ct in copper or gold — first worn Tuesday sunrise</span></div>
+      <div class="rrow"><span class="rk">Mantra</span><span><b>Oṁ Krāṁ Krīṁ Krauṁ Saḥ Bhaumāya Namaḥ</b> — 108× on Tuesdays</span></div>
+      <div class="rrow"><span class="rk">Day</span><span><b>Tuesday</b> — Hanumān Chālīsā; avoid impulsive commitments</span></div>
+      <div class="rrow"><span class="rk">Give</span><span>Red lentils (masoor) &amp; jaggery to the needy on Tuesdays</span></div>
+    </div>
+    <div class="remcard" data-testid="remedy-sun">
+      <div class="rp">Sun · Sūrya</div>
+      <div class="rw">Conjunct Rahu · 5H</div>
+      <div class="rrow"><span class="rk">Gem</span><span><b>Ruby (Māṇikya)</b> in gold — trial period before final setting, Sunday</span></div>
+      <div class="rrow"><span class="rk">Mantra</span><span><b>Oṁ Hrāṁ Hrīṁ Hrauṁ Saḥ Sūryāya Namaḥ</b> — 108× at sunrise</span></div>
+      <div class="rrow"><span class="rk">Day</span><span><b>Sunday</b> — offer water (arghya) to the rising Sun in a copper vessel</span></div>
+      <div class="rrow"><span class="rk">Give</span><span>Wheat &amp; jaggery on Sundays; honour father-figures &amp; mentors</span></div>
+    </div>
+    <div class="remcard" data-testid="remedy-rahu">
+      <div class="rp">Rahu</div>
+      <div class="rw">Watch-Flagged · 5H</div>
+      <div class="rrow"><span class="rk">Gem</span><span><b>Hessonite (Gomed)</b> — only after expert testing; never worn untested</span></div>
+      <div class="rrow"><span class="rk">Mantra</span><span><b>Oṁ Bhrāṁ Bhrīṁ Bhrauṁ Saḥ Rāhave Namaḥ</b> — 108× on Saturdays</span></div>
+      <div class="rrow"><span class="rk">Day</span><span><b>Saturday</b> — Durgā worship; a coconut offered to flowing water</span></div>
+      <div class="rrow"><span class="rk">Give</span><span>Blankets &amp; black sesame in charity; no ethical shortcuts</span></div>
+    </div>
+  </div>
+  <div class="remnote">Traditional guidance, not prescription — gemstones only after a qualified astrologer's trial period. Mantra, weekday discipline and charity are safe universal strengtheners; strong planets (Jupiter, Moon, Mercury) need no remedy.</div>
+
+  <div class="foot">
+    <span>Sub-periods proportioned per Vimshottari (lord-years ÷ 120 × 16y) from the Jupiter mahādaśā commencing Mar 2028.</span>
+    <span style="white-space:nowrap">Page 4 · Jupiter Ascent &amp; Remedies</span>
+  </div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="sheet page5">
+  <div class="seclabel"><span class="num">11</span><span class="txt">Compatibility · Guṇa Milan Template</span><span class="rule"></span></div>
+  <div class="cfields">
+    <div class="cfield" data-testid="compat-field-name"><div class="fl">Partner Name</div><div class="fline"></div></div>
+    <div class="cfield"><div class="fl">Birth Date</div><div class="fline"></div></div>
+    <div class="cfield"><div class="fl">Birth Time</div><div class="fline"></div></div>
+    <div class="cfield"><div class="fl">Birth City</div><div class="fline"></div></div>
+  </div>
+  <div class="compat">
+    <div class="dialcard" data-testid="compat-dial">
+      <svg width="118" height="118" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="50" fill="none" style="stroke:var(--border)" stroke-width="9" stroke-dasharray="3 4"/>
+        <text x="60" y="60" text-anchor="middle" font-size="20" font-weight="800" style="fill:var(--gold)">—</text>
+        <text x="60" y="77" text-anchor="middle" font-size="9" font-weight="700" style="fill:var(--muted)">/ 36</text>
+      </svg>
+      <div class="dialcap">Total Guṇa Score<br>computed once partner details are shared</div>
+    </div>
+    <table>
+      <colgroup><col style="width:20%"><col style="width:42%"><col style="width:12%"><col style="width:26%"></colgroup>
+      <thead><tr><th>Koota</th><th>Governs</th><th>Max</th><th>Score</th></tr></thead>
+      <tbody>
+        <tr><td class="planet">Varṇa</td><td class="effect">Work &amp; ego harmony</td><td class="house">1</td><td><div class="fline" style="width:60%"></div></td></tr>
+        <tr><td class="planet">Vaśya</td><td class="effect">Mutual influence</td><td class="house">2</td><td><div class="fline" style="width:60%"></div></td></tr>
+        <tr><td class="planet">Tārā</td><td class="effect">Destiny &amp; fortune</td><td class="house">3</td><td><div class="fline" style="width:60%"></div></td></tr>
+        <tr><td class="planet">Yoni</td><td class="effect">Intimacy &amp; instinct</td><td class="house">4</td><td><div class="fline" style="width:60%"></div></td></tr>
+        <tr><td class="planet">Graha Maitrī</td><td class="effect">Mental rapport</td><td class="house">5</td><td><div class="fline" style="width:60%"></div></td></tr>
+        <tr><td class="planet">Gaṇa</td><td class="effect">Temperament</td><td class="house">6</td><td><div class="fline" style="width:60%"></div></td></tr>
+        <tr><td class="planet">Bhakūṭa</td><td class="effect">Prosperity &amp; family</td><td class="house">7</td><td><div class="fline" style="width:60%"></div></td></tr>
+        <tr><td class="planet">Nāḍī</td><td class="effect">Health &amp; progeny</td><td class="house">8</td><td><div class="fline" style="width:60%"></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="verdicts">
+    <div class="verdict"><b>&lt; 18 · Realign</b>Remedial matching advised before commitment.</div>
+    <div class="verdict"><b>18–24 · Good</b>A workable union with conscious effort.</div>
+    <div class="verdict"><b>25–32 · Very Good</b>Natural harmony across most domains.</div>
+    <div class="verdict"><b>33–36 · Exceptional</b>Rare resonance — a destined pairing.</div>
+  </div>
+  <div class="remnote">Send the partner's name, birth date, exact time and city — this page updates with computed kootas, the score dial and a verdict, plus Nāḍī/Bhakūṭa dosha checks and cancellations where applicable.</div>
+  <div class="foot">
+    <span>Aṣṭakūṭa (36-guṇa) framework · Moon-nakṣatra based matching per classical Vedic synastry.</span>
+    <span style="white-space:nowrap">Page 5 · Compatibility Template</span>
+  </div>
+</div>
+
+<!-- PAGE 6 -->
+<div class="sheet page6">
+  <div class="seclabel"><span class="num">12</span><span class="txt">Strategic Roadmap · Daśā-Aligned</span><span class="rule"></span></div>
+  <div class="ladder" data-testid="revenue-ladder">
+    <div class="lstep"><div class="lv">₹1L / mo</div><div class="lk">Month 3 · Proof</div></div>
+    <span class="larr">→</span>
+    <div class="lstep"><div class="lv">₹5L / mo</div><div class="lk">Month 9 · Engine</div></div>
+    <span class="larr">→</span>
+    <div class="lstep"><div class="lv">₹15L / mo</div><div class="lk">Month 18 · Scale</div></div>
+    <span class="larr">→</span>
+    <div class="lstep"><div class="lv">₹2–5 Cr</div><div class="lk">Cumulative · Year 2</div></div>
+  </div>
+
+  <div class="seclabel"><span class="num">A</span><span class="txt">Offer Architecture</span><span class="rule"></span></div>
+  <div class="dwins">
+    <div class="dwin"><div class="wk">Launch Site · ₹75K–3L</div><p><b>Fixed scope, 2-week delivery.</b> Two niches (real-estate developers, clinics/D2C) across Nashik–Pune–Mumbai. No custom quotes — packages only.</p></div>
+    <div class="dwin"><div class="wk">Growth Retainer · ₹15–40K/mo</div><p><b>The compounding layer.</b> Maintenance + SEO + content. Thirty retainers is a ₹9L/month recurring floor before any new sale.</p></div>
+    <div class="dwin"><div class="wk">International Premium · $2–6K</div><p><b>USD changes the economics 3–5×.</b> US/UK/UAE via LinkedIn + cold outreach. Invoice from India under LUT — no Dubai entity needed yet.</p></div>
+  </div>
+
+  <div class="seclabel"><span class="num">B</span><span class="txt">Execution Phases</span><span class="rule"></span></div>
+  <div class="dwins">
+    <div class="dwin"><div class="wk">Phase I · Now → Feb 2027 · Rahu–Moon</div><p><b>Stabilise &amp; be seen.</b> Productise the offers, build 3 spec redesigns of famous local brands, run 30 outbound conversations weekly. This daśā favours visibility — sell hard.</p></div>
+    <div class="dwin"><div class="wk">Phase II · Feb 2027 → Mar 2028 · Rahu–Mars</div><p><b>Execution sprint.</b> 25–30 retainers live, 50% of revenue in USD, contract talent only, AI-accelerated delivery. Close aggressively before the daśā turns.</p></div>
+    <div class="dwin"><div class="wk">Phase III · Mar 2028+ · Jupiter Mahādaśā</div><p><b>Structural ascent.</b> Agency brand + productised IP (templates, SaaS). Open the Dubai entity only after ₹1 Cr international profit. ₹15–20 Cr becomes the Year-4 target, funded by this base.</p></div>
+  </div>
+
+  <div class="seclabel"><span class="num">C</span><span class="txt">Expansion &amp; The Dubai Question</span><span class="rule"></span></div>
+  <div class="dwins">
+    <div class="dwin"><div class="wk">Nashik → Pune → Mumbai</div><p><b>No offices — beachheads.</b> Win 5 anchor clients per city through niche portfolios and referral partners (CAs, architects, brokers). Travel for closings only; deliver remotely.</p></div>
+    <div class="dwin"><div class="wk">The International Engine</div><p><b>Before any entity, build the pipeline.</b> 15 USD conversations weekly on LinkedIn/Upwork; UAE agencies also subcontract Indian studios at $30–60/hr — a direct door into that market.</p></div>
+    <div class="dwin"><div class="wk">Dubai Entity — When &amp; How</div><p><b>Trigger: ₹1 Cr international profit.</b> Freezone (IFZA/Meydan) ≈ ₹1.5–3L/yr, 9% corporate tax above AED 375K, banking takes 4–8 weeks. Until then, LUT export invoicing does the job at 0% GST.</p></div>
+  </div>
+
+  <div class="rules" data-testid="operating-rules"><b>Operating rules.</b> No office or salaried hires until ₹3L/mo profit holds for 3 straight months · Export invoices under LUT (0% GST) · 10% referral programme on every delivered project · Weekly pipeline metric: 30 conversations, tracked · Dubai is a tax decision, not a growth decision · Rebuild personal runway before reinvesting a rupee.</div>
+
+  <div class="foot">
+    <span>Business guidance mapped to daśā phases — Rahu–Moon favours alliances &amp; visibility; Jupiter (1st &amp; 10th lord) opens the ascent from Mar 2028.</span>
+    <span style="white-space:nowrap">Page 6 · Strategic Roadmap</span>
   </div>
 </div>
 
