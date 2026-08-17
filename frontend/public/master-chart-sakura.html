@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SAURABH — Master Astrological Chart · Sakura Edition</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Great+Vibes&family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root{
   --canvas:#FFF9FA;
@@ -59,7 +59,7 @@ html,body{
   background:var(--card);
   border:1px solid var(--border);
   border-radius:8px;
-  padding:18px 20px 16px;
+  padding:22px 20px 20px;
   z-index:1;
 }
 .hero::after{
@@ -138,7 +138,7 @@ html,body{
   display:flex;
   align-items:center;
   gap:10px;
-  margin:13px 0 7px;
+  margin:16px 0 8px;
   position:relative;
   z-index:1;
 }
@@ -177,12 +177,12 @@ thead th{
   text-transform:uppercase;
   color:var(--pink);
   text-align:left;
-  padding:7px 10px;
+  padding:9px 10px;
   background:#FBEDF1;
   border-bottom:1px solid var(--border);
 }
 tbody td{
-  padding:6px 10px;
+  padding:8px 10px;
   font-size:9.5px;
   line-height:1.35;
   vertical-align:middle;
@@ -213,7 +213,8 @@ td.house{font-weight:700;color:var(--pink);}
   color:var(--deep);
   background:rgba(214,51,108,.07);
 }
-td.effect{color:var(--muted);font-size:9px;}
+td.effect{color:var(--muted);font-size:9.5px;}
+.deg{display:block;font-size:7.5px;color:var(--muted);font-weight:500;margin-top:1px;}
 td.effect .clamp{
   display:-webkit-box;
   -webkit-line-clamp:2;
@@ -234,7 +235,7 @@ td.effect b{color:var(--ink);font-weight:600;}
   background:var(--card);
   border:1px solid var(--border);
   border-radius:8px;
-  padding:10px 11px;
+  padding:12px 13px;
   position:relative;
   overflow:hidden;
 }
@@ -271,8 +272,8 @@ td.effect b{color:var(--ink);font-weight:600;}
   margin:2px 0 5px;
 }
 .hcard p{
-  font-size:8.5px;
-  line-height:1.45;
+  font-size:9px;
+  line-height:1.55;
   color:var(--muted);
 }
 .hcard p b{color:var(--ink);font-weight:600;}
@@ -282,7 +283,7 @@ td.effect b{color:var(--ink);font-weight:600;}
   border:1px solid rgba(201,134,31,.5);
   background:linear-gradient(135deg,rgba(201,134,31,.06),rgba(253,242,245,.9) 40%);
   border-radius:8px;
-  padding:13px 16px;
+  padding:16px 18px;
   position:relative;
   z-index:1;
 }
@@ -316,8 +317,8 @@ td.effect b{color:var(--ink);font-weight:600;}
   margin-bottom:4px;
 }
 .callout p{
-  font-size:9px;
-  line-height:1.5;
+  font-size:9.5px;
+  line-height:1.6;
   color:var(--muted);
 }
 .callout p b{color:var(--ink);font-weight:600;}
@@ -326,8 +327,8 @@ td.effect b{color:var(--ink);font-weight:600;}
 
 /* ---------- FOOTER ---------- */
 .foot{
-  margin-top:10px;
-  padding-top:7px;
+  margin-top:12px;
+  padding-top:9px;
   border-top:1px solid var(--border);
   display:flex;
   justify-content:space-between;
@@ -338,6 +339,57 @@ td.effect b{color:var(--ink);font-weight:600;}
   line-height:1.5;
   position:relative;
   z-index:1;
+}
+
+/* ---------- PAGE 2 ---------- */
+.wheelcard{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:14px 14px 10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+  z-index:1;
+}
+.natal{width:620px;height:620px;max-width:100%;}
+.wheelfoot{
+  font-size:7.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-top:8px;
+  text-align:center;
+}
+.dedication{
+  display:grid;
+  grid-template-columns:112px 1fr;
+  gap:18px;
+  align-items:center;
+  background:var(--card);
+  border:1px solid rgba(201,134,31,.5);
+  border-radius:8px;
+  padding:14px 18px;
+  position:relative;
+  z-index:1;
+}
+.seal{width:108px;height:108px;}
+.lbl2{
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:4px;
+}
+.dline{font-size:10px;line-height:1.65;color:var(--muted);}
+.dline b{color:var(--title);font-weight:700;}
+.dsig{font-family:'Great Vibes','Inter',cursive;font-size:26px;color:var(--pink);margin-top:6px;}
+.dmeta{font-size:7px;letter-spacing:.26em;color:#B295A0;text-transform:uppercase;margin-top:3px;}
+@media screen{
+  .wheelcard{animation:lineup .8s cubic-bezier(.22,1,.36,1) both;}
+  .dedication{animation:lineup .8s cubic-bezier(.22,1,.36,1) both;animation-delay:.15s;}
 }
 
 /* ---------- TOOLBAR (screen only) ---------- */
@@ -432,6 +484,7 @@ td.effect b{color:var(--ink);font-weight:600;}
     overflow:visible;
   }
   .toolbar,.petal{display:none !important;}
+  .page2{page-break-before:always;}
   .branch{animation:none;}
   *{animation:none !important;}
 }
@@ -476,10 +529,10 @@ td.effect b{color:var(--ink);font-weight:600;}
     <h1>SAURABH</h1>
     <div class="sub">Master Astrological Chart &amp; Planetary Architecture</div>
     <div class="chips">
-      <div class="chip"><span class="k">Sun</span><span class="v">Virgo</span></div>
+      <div class="chip"><span class="k">Sun</span><span class="v">Cancer / 5H</span></div>
       <div class="chip"><span class="k">Moon</span><span class="v">Virgo / 7H</span></div>
-      <div class="chip"><span class="k">Ascendant</span><span class="v">Pisces</span></div>
-      <div class="chip gold"><span class="k">Dominant Energy</span><span class="v">Precision Command</span></div>
+      <div class="chip"><span class="k">Ascendant</span><span class="v">Pisces 3°18′</span></div>
+      <div class="chip gold"><span class="k">Dominant Energy</span><span class="v">5H Innovation Stellium</span></div>
     </div>
   </header>
 
@@ -493,63 +546,63 @@ td.effect b{color:var(--ink);font-weight:600;}
     <tbody>
       <tr>
         <td class="planet"><span class="glyph">☉</span>Sun</td>
-        <td class="sign">Virgo</td>
-        <td class="house">7H</td>
-        <td><span class="tag blue">Mercurial Ally</span></td>
-        <td class="effect"><span class="clamp"><b>Authority through precision.</b> Leads by mastering the detail others delegate — public-facing command in partnerships &amp; markets.</span></td>
+        <td class="sign">Cancer<span class="deg">18°41′</span></td>
+        <td class="house">5H</td>
+        <td><span class="tag blue">Radiant Core</span></td>
+        <td class="effect"><span class="clamp"><b>Leadership through creation.</b> Authority peaks in original work — products, ventures &amp; IP; visibility follows invention.</span></td>
       </tr>
       <tr>
         <td class="planet"><span class="glyph">☽</span>Moon</td>
-        <td class="sign">Virgo</td>
+        <td class="sign">Virgo<span class="deg">19°51′</span></td>
         <td class="house">7H</td>
         <td><span class="tag blue">Analytical Instinct</span></td>
         <td class="effect"><span class="clamp"><b>Emotional intelligence runs on data.</b> Reads counterparties instantly; deal-sense embedded at the gut level.</span></td>
       </tr>
       <tr>
         <td class="planet"><span class="glyph">☿</span>Mercury</td>
-        <td class="sign">Virgo</td>
-        <td class="house">7H</td>
-        <td><span class="tag">Exalted</span></td>
-        <td class="effect"><span class="clamp"><b>Peak intellect in the house of contracts.</b> Negotiation, drafting, strategy — a native edge inside every signed agreement.</span></td>
+        <td class="sign">Cancer<span class="deg">1°44′</span></td>
+        <td class="house">5H</td>
+        <td><span class="tag blue">Creative Intellect</span></td>
+        <td class="effect"><span class="clamp"><b>Intuitive engineering mind.</b> Converts imagination into working systems — code, language &amp; product architecture.</span></td>
       </tr>
       <tr>
         <td class="planet"><span class="glyph">♀</span>Venus</td>
-        <td class="sign">Leo</td>
+        <td class="sign">Leo<span class="deg">3°34′</span></td>
         <td class="house">6H</td>
         <td><span class="tag blue">Bold Refinement</span></td>
-        <td class="effect"><span class="clamp"><b>Operations become brand theatre.</b> Premium taste applied to service, systems, health &amp; execution discipline.</span></td>
+        <td class="effect"><span class="clamp"><b>Operations become brand theatre.</b> Premium taste applied to service, systems &amp; execution discipline.</span></td>
       </tr>
       <tr>
         <td class="planet"><span class="glyph">♂</span>Mars</td>
-        <td class="sign">Focused Placement †</td>
-        <td class="house">SH</td>
-        <td><span class="tag blue">Directed Force</span></td>
-        <td class="effect"><span class="clamp"><b>Energy deploys surgically, never broadly.</b> Wins through timed, decisive strikes in the strategic house.</span></td>
+        <td class="sign">Cancer<span class="deg">8°28′</span></td>
+        <td class="house">5H</td>
+        <td><span class="tag">Neecha Bhanga · Raja Yoga</span></td>
+        <td class="effect"><span class="clamp"><b>Debilitation reversed into rare power.</b> Raw drive matures into patient, strategic force — late-blooming, formidable.</span></td>
       </tr>
       <tr>
         <td class="planet"><span class="glyph">♃</span>Jupiter</td>
-        <td class="sign">Expansive †</td>
-        <td class="house">GH</td>
-        <td><span class="tag blue">Amplifier</span></td>
-        <td class="effect"><span class="clamp"><b>Wisdom compounds capital.</b> Expansion arrives through counsel, mentorship &amp; calculated optimism in the growth house.</span></td>
+        <td class="sign">Taurus<span class="deg">12°40′</span></td>
+        <td class="house">3H</td>
+        <td><span class="tag">Lord of 1st &amp; 10th</span></td>
+        <td class="effect"><span class="clamp"><b>Career rises through self-built craft.</b> The chart's ruler invests in skills, content &amp; courage — a slow, compounding ascent.</span></td>
       </tr>
       <tr>
         <td class="planet"><span class="glyph">♄</span>Saturn</td>
-        <td class="sign">Capricorn</td>
-        <td class="house">11H</td>
-        <td><span class="tag">Swakshetra · Own Sign</span></td>
-        <td class="effect"><span class="clamp"><b>Gains institutionalized.</b> Slow, structural, irreversible wealth via networks engineered to outlast market cycles.</span></td>
+        <td class="sign">Taurus<span class="deg">5°48′</span></td>
+        <td class="house">3H</td>
+        <td><span class="tag blue">Iron Discipline</span></td>
+        <td class="effect"><span class="clamp"><b>The relentless craftsman.</b> Effort systematized — mastery of tools, hands &amp; code, built hour by hour.</span></td>
       </tr>
       <tr>
         <td class="planet"><span class="glyph">☊</span>Rahu</td>
-        <td class="sign">Cancer</td>
+        <td class="sign">Cancer<span class="deg">0°38′</span></td>
         <td class="house">5H</td>
-        <td><span class="tag blue">Amplified Drive</span></td>
-        <td class="effect"><span class="clamp"><b>Obsessive creative intelligence.</b> Unconventional bets in speculation, ventures &amp; intellectual property.</span></td>
+        <td><span class="tag blue">Amplified Genius</span></td>
+        <td class="effect"><span class="clamp"><b>Obsessive creative intelligence.</b> Unconventional bets in technology, speculation &amp; intellectual property.</span></td>
       </tr>
       <tr>
         <td class="planet"><span class="glyph">☋</span>Ketu</td>
-        <td class="sign">Capricorn</td>
+        <td class="sign">Capricorn<span class="deg">0°38′</span></td>
         <td class="house">11H</td>
         <td><span class="tag blue">Detached Mastery</span></td>
         <td class="effect"><span class="clamp"><b>Immune to crowd validation.</b> Filters networks ruthlessly — few allies, all of them consequential.</span></td>
@@ -564,25 +617,25 @@ td.effect b{color:var(--ink);font-weight:600;}
       <div class="hnum">1</div>
       <div class="hh">The Vessel</div>
       <div class="hsign">1st House · Pisces</div>
-      <p><b>Identity &amp; Vision.</b> Intuitive-strategist ascendant — perceives whole systems before others see the parts. Soft exterior; oceanic depth of calculation beneath it.</p>
+      <p><b>Identity &amp; Vision.</b> Ascendant at Pisces 3°18′ — an intuitive strategist who perceives whole systems before others see the parts.</p>
     </div>
     <div class="hcard">
-      <div class="hnum">6</div>
-      <div class="hh">The Engine</div>
-      <div class="hsign">6th House · Leo</div>
-      <p><b>Operations &amp; Discipline.</b> Daily execution carries regal standards — rivals are outworked and outclassed. Health and routine treated as performance assets.</p>
+      <div class="hnum">3</div>
+      <div class="hh">The Forge</div>
+      <div class="hsign">3rd House · Taurus</div>
+      <p><b>Skills &amp; Discipline.</b> A Saturn–Jupiter conjunction: patient practice fused with expansive wisdom. Craft compounds into durable mastery.</p>
+    </div>
+    <div class="hcard">
+      <div class="hnum">5</div>
+      <div class="hh">The Powerhouse</div>
+      <div class="hsign">5th House · Cancer</div>
+      <p><b>Innovation &amp; Intellect.</b> Four planets ignite the house of creation — Sun's authority, Mercury's engineering, Mars' force, Rahu's edge.</p>
     </div>
     <div class="hcard">
       <div class="hnum">7</div>
       <div class="hh">The Arena</div>
       <div class="hsign">7th House · Virgo</div>
-      <p><b>Partnerships &amp; Markets.</b> The chart's gravitational centre — Sun, Moon &amp; exalted Mercury converge here. Every alliance is an audited, optimized instrument.</p>
-    </div>
-    <div class="hcard">
-      <div class="hnum">11</div>
-      <div class="hh">The Treasury</div>
-      <div class="hsign">11th House · Capricorn</div>
-      <p><b>Gains &amp; Networks.</b> Saturn rules his own vault — income scales structurally, not sporadically. Ketu prunes the network down to pure signal.</p>
+      <p><b>Partnerships &amp; Markets.</b> The analytical Moon audits every alliance — logical, organized, consequential allies only.</p>
     </div>
   </div>
 
@@ -592,29 +645,204 @@ td.effect b{color:var(--ink);font-weight:600;}
     <div class="grid2">
       <div>
         <div class="lbl">Archetype</div>
-        <div class="arch">THE PRECISION SOVEREIGN</div>
-        <p>A Pisces-ascendant visionary running a <b>Virgo triple-stack</b> in the house of alliances — imagination at the helm, forensic intelligence at the negotiating table, and a <span class="au">Saturn-owned treasury</span> compounding silently in the eleventh.</p>
+        <div class="arch">THE INTUITIVE ARCHITECT</div>
+        <p>A Pisces-ascendant visionary carrying a <b>four-planet Cancer stellium</b> in the 5th — the house of creation. Imagination is industrialized: a Saturn–Jupiter forge builds skill in the 3rd, the analytical Moon audits alliances in the 7th, and a <span class="au">Ketu-pruned 11th</span> keeps gains structural.</p>
       </div>
       <div>
         <div class="lbl">Operational Directive</div>
-        <p><b>Monetize discernment.</b> Enter markets through partnerships, never alone — the <span class="pk">7th house is the profit centre</span>. Systematize gains through long-cycle Saturn structures; deploy Rahu's 5th-house creativity for asymmetric upside, and let Ketu keep the network small, senior and sovereign.</p>
+        <p><b>Build original IP.</b> The <span class="pk">5th house is the profit engine</span> — invent, code, ship. Jupiter, lord of the 1st &amp; 10th, converts self-built craft into career altitude; Mars' <span class="au">Neecha Bhanga</span> turns raw drive into strategic force. Monetize creation, and let elite Capricorn networks distribute.</p>
       </div>
     </div>
   </div>
 
   <div class="foot">
-    <span>† Mars &amp; Jupiter retained as stylized placeholders per brief — exact signs are a 30-second swap. Ascendant-reconciled: Virgo = 7H · Leo = 6H · Capricorn = 11H · Rahu 5H / Ketu 11H.</span>
-    <span style="white-space:nowrap">Sakura Edition · A4 Portrait · print-color-adjust: exact</span>
+    <span>Placements verified via Swiss Ephemeris — Sidereal · Lahiri · True Node · Whole-sign houses from Pisces 3°18′. Jupiter confirmed in Taurus · 3H (conjunct Saturn).</span>
+    <span style="white-space:nowrap">04.08.2000 · 21:00 IST · Pratapgarh, U.P.</span>
   </div>
 
+</div>
+
+<!-- PAGE 2 -->
+<div class="sheet page2">
+  <div class="seclabel"><span class="num">04</span><span class="txt">Natal Wheel · Whole-Sign Houses</span><span class="rule"></span></div>
+  <div class="wheelcard">
+    <svg class="natal" viewBox="0 0 660 660" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <circle cx="330" cy="330" r="318" fill="#FDF4F7" stroke="#EFCFD9" stroke-width="1.5"/>
+    <path d="M465.0,563.8 L469.1,561.4 L473.1,559.0 L477.1,556.4 L481.0,553.8 L484.9,551.2 L488.7,548.4 L492.5,545.6 L496.2,542.8 L499.9,539.8 L503.6,536.8 L507.1,533.8 L510.7,530.6 L514.1,527.5 L517.6,524.2 L520.9,520.9 L524.2,517.6 L527.5,514.1 L530.6,510.7 L533.8,507.1 L536.8,503.6 L539.8,499.9 L542.8,496.2 L545.6,492.5 L548.4,488.7 L551.2,484.9 L553.8,481.0 L556.4,477.1 L559.0,473.1 L561.4,469.1 L563.8,465.0 L416.6,380.0 L415.7,381.5 L414.8,383.0 L413.9,384.5 L412.9,385.9 L411.9,387.4 L410.9,388.8 L409.9,390.2 L408.8,391.6 L407.7,392.9 L406.6,394.3 L405.5,395.6 L404.3,396.9 L403.1,398.2 L401.9,399.5 L400.7,400.7 L399.5,401.9 L398.2,403.1 L396.9,404.3 L395.6,405.5 L394.3,406.6 L392.9,407.7 L391.6,408.8 L390.2,409.9 L388.8,410.9 L387.4,411.9 L385.9,412.9 L384.5,413.9 L383.0,414.8 L381.5,415.7 L380.0,416.6 Z" fill="rgba(214,51,108,.07)"/>
+    <path d="M195.0,563.8 L199.1,566.1 L203.2,568.4 L207.4,570.6 L211.6,572.7 L215.9,574.7 L220.2,576.7 L224.5,578.5 L228.9,580.3 L233.2,582.1 L237.7,583.7 L242.1,585.3 L246.6,586.8 L251.1,588.2 L255.6,589.5 L260.1,590.8 L264.7,592.0 L269.3,593.1 L273.9,594.1 L278.5,595.0 L283.1,595.9 L287.8,596.7 L292.4,597.4 L297.1,598.0 L301.8,598.5 L306.5,599.0 L311.2,599.3 L315.9,599.6 L320.6,599.8 L325.3,600.0 L330.0,600.0 L330.0,430.0 L328.3,430.0 L326.5,429.9 L324.8,429.9 L323.0,429.8 L321.3,429.6 L319.5,429.5 L317.8,429.3 L316.1,429.0 L314.4,428.8 L312.6,428.5 L310.9,428.2 L309.2,427.8 L307.5,427.4 L305.8,427.0 L304.1,426.6 L302.4,426.1 L300.8,425.6 L299.1,425.1 L297.4,424.6 L295.8,424.0 L294.2,423.4 L292.5,422.7 L290.9,422.1 L289.3,421.4 L287.7,420.6 L286.2,419.9 L284.6,419.1 L283.1,418.3 L281.5,417.5 L280.0,416.6 Z" fill="rgba(201,134,31,.06)"/>
+    <line x1="230.0" y1="330.0" x2="12.0" y2="330.0" stroke="#F3DBE2" stroke-width="1"/>
+    <line x1="243.4" y1="380.0" x2="54.6" y2="489.0" stroke="#F3DBE2" stroke-width="1"/>
+    <line x1="280.0" y1="416.6" x2="171.0" y2="605.4" stroke="#F3DBE2" stroke-width="1"/>
+    <line x1="330.0" y1="430.0" x2="330.0" y2="648.0" stroke="#F3DBE2" stroke-width="1"/>
+    <line x1="380.0" y1="416.6" x2="489.0" y2="605.4" stroke="#F3DBE2" stroke-width="1"/>
+    <line x1="416.6" y1="380.0" x2="605.4" y2="489.0" stroke="#F3DBE2" stroke-width="1"/>
+    <line x1="430.0" y1="330.0" x2="648.0" y2="330.0" stroke="#F3DBE2" stroke-width="1"/>
+    <line x1="416.6" y1="280.0" x2="605.4" y2="171.0" stroke="#F3DBE2" stroke-width="1"/>
+    <line x1="380.0" y1="243.4" x2="489.0" y2="54.6" stroke="#F3DBE2" stroke-width="1"/>
+    <line x1="330.0" y1="230.0" x2="330.0" y2="12.0" stroke="#F3DBE2" stroke-width="1"/>
+    <line x1="280.0" y1="243.4" x2="171.0" y2="54.6" stroke="#F3DBE2" stroke-width="1"/>
+    <line x1="243.4" y1="280.0" x2="54.6" y2="171.0" stroke="#F3DBE2" stroke-width="1"/>
+    <line x1="599.0" y1="306.5" x2="593.0" y2="307.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="595.9" y1="283.1" x2="590.0" y2="284.2" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="590.8" y1="260.1" x2="585.0" y2="261.7" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="583.7" y1="237.7" x2="578.1" y2="239.7" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="574.7" y1="215.9" x2="569.3" y2="218.4" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="551.2" y1="175.1" x2="546.3" y2="178.6" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="536.8" y1="156.4" x2="532.2" y2="160.3" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="520.9" y1="139.1" x2="516.7" y2="143.3" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="503.6" y1="123.2" x2="499.7" y2="127.8" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="484.9" y1="108.8" x2="481.4" y2="113.7" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="444.1" y1="85.3" x2="441.6" y2="90.7" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="422.3" y1="76.3" x2="420.3" y2="81.9" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="399.9" y1="69.2" x2="398.3" y2="75.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="376.9" y1="64.1" x2="375.8" y2="70.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="353.5" y1="61.0" x2="353.0" y2="67.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="306.5" y1="61.0" x2="307.0" y2="67.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="283.1" y1="64.1" x2="284.2" y2="70.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="260.1" y1="69.2" x2="261.7" y2="75.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="237.7" y1="76.3" x2="239.7" y2="81.9" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="215.9" y1="85.3" x2="218.4" y2="90.7" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="175.1" y1="108.8" x2="178.6" y2="113.7" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="156.4" y1="123.2" x2="160.3" y2="127.8" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="139.1" y1="139.1" x2="143.3" y2="143.3" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="123.2" y1="156.4" x2="127.8" y2="160.3" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="108.8" y1="175.1" x2="113.7" y2="178.6" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="85.3" y1="215.9" x2="90.7" y2="218.4" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="76.3" y1="237.7" x2="81.9" y2="239.7" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="69.2" y1="260.1" x2="75.0" y2="261.7" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="64.1" y1="283.1" x2="70.0" y2="284.2" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="61.0" y1="306.5" x2="67.0" y2="307.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="61.0" y1="353.5" x2="67.0" y2="353.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="64.1" y1="376.9" x2="70.0" y2="375.8" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="69.2" y1="399.9" x2="75.0" y2="398.3" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="76.3" y1="422.3" x2="81.9" y2="420.3" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="85.3" y1="444.1" x2="90.7" y2="441.6" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="108.8" y1="484.9" x2="113.7" y2="481.4" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="123.2" y1="503.6" x2="127.8" y2="499.7" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="139.1" y1="520.9" x2="143.3" y2="516.7" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="156.4" y1="536.8" x2="160.3" y2="532.2" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="175.1" y1="551.2" x2="178.6" y2="546.3" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="215.9" y1="574.7" x2="218.4" y2="569.3" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="237.7" y1="583.7" x2="239.7" y2="578.1" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="260.1" y1="590.8" x2="261.7" y2="585.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="283.1" y1="595.9" x2="284.2" y2="590.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="306.5" y1="599.0" x2="307.0" y2="593.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="353.5" y1="599.0" x2="353.0" y2="593.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="376.9" y1="595.9" x2="375.8" y2="590.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="399.9" y1="590.8" x2="398.3" y2="585.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="422.3" y1="583.7" x2="420.3" y2="578.1" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="444.1" y1="574.7" x2="441.6" y2="569.3" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="484.9" y1="551.2" x2="481.4" y2="546.3" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="503.6" y1="536.8" x2="499.7" y2="532.2" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="520.9" y1="520.9" x2="516.7" y2="516.7" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="536.8" y1="503.6" x2="532.2" y2="499.7" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="551.2" y1="484.9" x2="546.3" y2="481.4" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="574.7" y1="444.1" x2="569.3" y2="441.6" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="583.7" y1="422.3" x2="578.1" y2="420.3" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="590.8" y1="399.9" x2="585.0" y2="398.3" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="595.9" y1="376.9" x2="590.0" y2="375.8" stroke="#E8C7D1" stroke-width=".75"/>
+    <line x1="599.0" y1="353.5" x2="593.0" y2="353.0" stroke="#E8C7D1" stroke-width=".75"/>
+    <circle cx="330" cy="330" r="270" fill="none" stroke="#EFCFD9" stroke-width="1"/>
+    <text x="47.0" y="411.8" text-anchor="middle" font-size="17" fill="#D6336C">♓︎</text>
+    <text x="218.0" y="363.0" text-anchor="middle" font-size="10" font-weight="700" fill="#C9A5B1">1</text>
+    <text x="122.8" y="543.2" text-anchor="middle" font-size="17" fill="#D6336C">♈︎</text>
+    <text x="248.0" y="415.0" text-anchor="middle" font-size="10" font-weight="700" fill="#C9A5B1">2</text>
+    <text x="254.2" y="619.0" text-anchor="middle" font-size="17" fill="#D6336C">♉︎</text>
+    <text x="300.0" y="445.0" text-anchor="middle" font-size="10" font-weight="700" fill="#C9A5B1">3</text>
+    <text x="405.8" y="619.0" text-anchor="middle" font-size="17" fill="#D6336C">♊︎</text>
+    <text x="360.0" y="445.0" text-anchor="middle" font-size="10" font-weight="700" fill="#C9A5B1">4</text>
+    <text x="537.2" y="543.2" text-anchor="middle" font-size="17" fill="#D6336C">♋︎</text>
+    <text x="412.0" y="415.0" text-anchor="middle" font-size="10" font-weight="700" fill="#C9A5B1">5</text>
+    <text x="613.0" y="411.8" text-anchor="middle" font-size="17" fill="#D6336C">♌︎</text>
+    <text x="442.0" y="363.0" text-anchor="middle" font-size="10" font-weight="700" fill="#C9A5B1">6</text>
+    <text x="613.0" y="260.2" text-anchor="middle" font-size="17" fill="#D6336C">♍︎</text>
+    <text x="442.0" y="303.0" text-anchor="middle" font-size="10" font-weight="700" fill="#C9A5B1">7</text>
+    <text x="537.2" y="128.8" text-anchor="middle" font-size="17" fill="#D6336C">♎︎</text>
+    <text x="412.0" y="251.0" text-anchor="middle" font-size="10" font-weight="700" fill="#C9A5B1">8</text>
+    <text x="405.8" y="53.0" text-anchor="middle" font-size="17" fill="#D6336C">♏︎</text>
+    <text x="360.0" y="221.0" text-anchor="middle" font-size="10" font-weight="700" fill="#C9A5B1">9</text>
+    <text x="254.2" y="53.0" text-anchor="middle" font-size="17" fill="#D6336C">♐︎</text>
+    <text x="300.0" y="221.0" text-anchor="middle" font-size="10" font-weight="700" fill="#C9A5B1">10</text>
+    <text x="122.8" y="128.8" text-anchor="middle" font-size="17" fill="#D6336C">♑︎</text>
+    <text x="248.0" y="251.0" text-anchor="middle" font-size="10" font-weight="700" fill="#C9A5B1">11</text>
+    <text x="47.0" y="260.2" text-anchor="middle" font-size="17" fill="#D6336C">♒︎</text>
+    <text x="218.0" y="303.0" text-anchor="middle" font-size="10" font-weight="700" fill="#C9A5B1">12</text>
+    <line x1="230.2" y1="335.7" x2="12.5" y2="348.3" stroke="#C9861F" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="165.3" y="333.5" text-anchor="middle" font-size="8" font-weight="800" letter-spacing="1.5" fill="#C9861F">ASC</text>
+    <text x="165.3" y="343.5" text-anchor="middle" font-size="7" fill="#C9861F">3°18′</text>
+    <line x1="532.8" y1="508.3" x2="523.8" y2="500.3" stroke="#D6336C" stroke-width="1.5"/>
+    <text x="507.2" y="485.8" text-anchor="middle" font-size="17" fill="#43333A">☉</text>
+    <text x="507.2" y="496.8" text-anchor="middle" font-size="6.5" font-weight="700" letter-spacing="1" fill="#8A7078">SUN</text>
+    <text x="507.2" y="505.8" text-anchor="middle" font-size="6.5" fill="#C9861F">18°41′</text>
+    <line x1="584.0" y1="238.3" x2="572.7" y2="242.4" stroke="#D6336C" stroke-width="1.5"/>
+    <text x="522.8" y="260.4" text-anchor="middle" font-size="17" fill="#43333A">☽</text>
+    <text x="522.8" y="271.4" text-anchor="middle" font-size="6.5" font-weight="700" letter-spacing="1" fill="#8A7078">MOON</text>
+    <text x="522.8" y="280.4" text-anchor="middle" font-size="6.5" fill="#C9861F">19°51′</text>
+    <line x1="472.0" y1="559.6" x2="465.7" y2="549.4" stroke="#D6336C" stroke-width="1.5"/>
+    <text x="433.1" y="496.7" text-anchor="middle" font-size="17" fill="#43333A">☿</text>
+    <text x="433.1" y="507.7" text-anchor="middle" font-size="6.5" font-weight="700" letter-spacing="1" fill="#8A7078">MERCURY</text>
+    <text x="433.1" y="516.7" text-anchor="middle" font-size="6.5" fill="#C9861F">1°44′</text>
+    <line x1="571.8" y1="450.2" x2="561.0" y2="444.8" stroke="#D6336C" stroke-width="1.5"/>
+    <text x="513.6" y="421.2" text-anchor="middle" font-size="17" fill="#43333A">♀</text>
+    <text x="513.6" y="432.2" text-anchor="middle" font-size="6.5" font-weight="700" letter-spacing="1" fill="#8A7078">VENUS</text>
+    <text x="513.6" y="441.2" text-anchor="middle" font-size="6.5" fill="#C9861F">3°34′</text>
+    <line x1="497.9" y1="541.4" x2="490.5" y2="532.0" stroke="#D6336C" stroke-width="1.5"/>
+    <text x="422.1" y="445.9" text-anchor="middle" font-size="17" fill="#C9861F">♂</text>
+    <text x="422.1" y="456.9" text-anchor="middle" font-size="6.5" font-weight="700" letter-spacing="1" fill="#8A7078">MARS</text>
+    <text x="422.1" y="465.9" text-anchor="middle" font-size="6.5" fill="#C9861F">8°28′</text>
+    <line x1="249.5" y1="587.7" x2="253.1" y2="576.3" stroke="#D6336C" stroke-width="1.5"/>
+    <text x="259.1" y="557.2" text-anchor="middle" font-size="17" fill="#C9861F">♃</text>
+    <text x="259.1" y="568.2" text-anchor="middle" font-size="6.5" font-weight="700" letter-spacing="1" fill="#8A7078">JUPITER</text>
+    <text x="259.1" y="577.2" text-anchor="middle" font-size="6.5" fill="#C9861F">12°40′</text>
+    <line x1="219.3" y1="576.3" x2="224.3" y2="565.3" stroke="#D6336C" stroke-width="1.5"/>
+    <text x="255.4" y="496.0" text-anchor="middle" font-size="17" fill="#43333A">♄</text>
+    <text x="255.4" y="507.0" text-anchor="middle" font-size="6.5" font-weight="700" letter-spacing="1" fill="#8A7078">SATURN</text>
+    <text x="255.4" y="516.0" text-anchor="middle" font-size="6.5" fill="#C9861F">5°48′</text>
+    <line x1="467.6" y1="562.3" x2="461.5" y2="552.0" stroke="#D6336C" stroke-width="1.5"/>
+    <text x="457.4" y="545.1" text-anchor="middle" font-size="17" fill="#43333A">☊</text>
+    <text x="457.4" y="556.1" text-anchor="middle" font-size="6.5" font-weight="700" letter-spacing="1" fill="#8A7078">RAHU</text>
+    <text x="457.4" y="565.1" text-anchor="middle" font-size="6.5" fill="#C9861F">0°38′</text>
+    <line x1="192.4" y1="97.7" x2="198.5" y2="108.0" stroke="#D6336C" stroke-width="1.5"/>
+    <text x="225.5" y="153.6" text-anchor="middle" font-size="17" fill="#43333A">☋</text>
+    <text x="225.5" y="164.6" text-anchor="middle" font-size="6.5" font-weight="700" letter-spacing="1" fill="#8A7078">KETU</text>
+    <text x="225.5" y="173.6" text-anchor="middle" font-size="6.5" fill="#C9861F">0°38′</text>
+    <circle cx="330" cy="330" r="100" fill="#FFFFFF" stroke="#EFCFD9" stroke-width="1"/>
+    <text x="330" y="320" text-anchor="middle" font-size="16" font-weight="800" letter-spacing="3" fill="#3D2530" font-family="Fraunces, Georgia, serif">SAURABH</text>
+    <text x="330" y="336" text-anchor="middle" font-size="7" font-weight="700" letter-spacing="2.5" fill="#D6336C">PISCES RISING</text>
+    <text x="330" y="350" text-anchor="middle" font-size="6.5" letter-spacing="1.5" fill="#8A7078">04 · 08 · 2000 — 21:00 IST</text>
+    <text x="330" y="361" text-anchor="middle" font-size="6" letter-spacing="1.2" fill="#8A7078">PRATAPGARH · 25.9°N 81.9°E</text>
+    </svg>
+    <div class="wheelfoot">Sidereal · Lahiri Ayanāṁśa · True Node · Every planet plotted to the exact minute of arc</div>
+  </div>
+  <div class="seclabel"><span class="num">05</span><span class="txt">Dedication</span><span class="rule"></span></div>
+  <div class="dedication">
+    <svg class="seal" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="60" r="57" fill="none" stroke="#C9861F" stroke-width="1.5"/>
+      <circle cx="60" cy="60" r="48" fill="none" stroke="#C9861F" stroke-width=".75" stroke-dasharray="2 3"/>
+      <defs><path id="sealarc" d="M 60 60 m -41 0 a 41 41 0 1 1 82 0 a 41 41 0 1 1 -82 0"/></defs>
+      <text font-size="7.2" letter-spacing="2.1" fill="#C9861F" font-weight="700" font-family="Inter, sans-serif"><textPath href="#sealarc">MASTER CHART · SAURABH · MMXXVI · SEALED · </textPath></text>
+      <text x="60" y="73" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="36" font-weight="800" fill="#3D2530">S</text>
+    </svg>
+    <div class="dtext">
+      <div class="lbl2">Dedication</div>
+      <p class="dline">Prepared exclusively for <b>Saurabh</b> — engineer of systems, student of the hidden, sovereign of his own becoming. May every creation compound, every alliance be exact, and every season auspicious.</p>
+      <div class="dsig">per aspera ad astra</div>
+      <div class="dmeta">Sealed · Natal Intelligence Dossier · MMXXVI</div>
+    </div>
+  </div>
+  <div class="foot">
+    <span>Wheel positions plotted from Swiss Ephemeris data — houses counted whole-sign from the Pisces ascendant.</span>
+    <span style="white-space:nowrap">Page 2 · Natal Wheel &amp; Dedication</span>
+  </div>
 </div>
 
 <div class="toolbar">
   <a class="tb-btn primary" href="/SAURABH-Master-Chart-Sakura.pdf" download data-testid="download-pdf-btn">
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
-    Download PDF
+    A4 PDF
   </a>
-  <button class="tb-btn secondary" onclick="window.print()" data-testid="print-pdf-btn">Print to PDF</button>
+  <a class="tb-btn secondary" href="/SAURABH-Master-Chart-Sakura-Letter.pdf" download data-testid="download-letter-btn">Letter PDF</a>
+  <button class="tb-btn secondary" onclick="window.print()" data-testid="print-pdf-btn">Print</button>
   <a class="tb-btn ghost" href="/master-chart.html" data-testid="dark-edition-link">Dark Edition</a>
 </div>
 </body>
