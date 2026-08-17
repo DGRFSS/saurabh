@@ -3,31 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SAURABH — Master Astrological Chart &amp; Planetary Architecture</title>
+<title>SAURABH — Master Astrological Chart · Sakura Edition</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root{
-  --canvas:#0B0E14;
-  --card:#161B22;
-  --border:#232A34;
-  --blue:#3B82F6;
-  --gold:#F59E0B;
-  --body:#E2E8F0;
-  --muted:#8B98A9;
-  --zebra:#10151D;
+  --canvas:#FFF9FA;
+  --card:#FFFFFF;
+  --border:#F3DBE2;
+  --pink:#D6336C;
+  --deep:#9D2B50;
+  --gold:#C9861F;
+  --ink:#43333A;
+  --muted:#8A7078;
+  --zebra:#FDF2F5;
+  --title:#3D2530;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
 html,body{
-  background:#05070B;
+  background:#F6E7EB;
   font-family:'Inter',system-ui,-apple-system,'SF Pro Display','Segoe UI',sans-serif;
-  color:var(--body);
+  color:var(--ink);
   -webkit-font-smoothing:antialiased;
   print-color-adjust:exact;
   -webkit-print-color-adjust:exact;
 }
+.serif{font-family:'Fraunces','Inter',Georgia,serif;}
 
 .sheet{
   width:210mm;
@@ -35,8 +38,18 @@ html,body{
   margin:24px auto 96px;
   padding:12mm;
   background:var(--canvas);
-  box-shadow:0 24px 80px rgba(0,0,0,.6);
+  box-shadow:0 24px 80px rgba(157,43,80,.18);
   position:relative;
+  overflow:hidden;
+}
+
+/* drifting petals (screen only) */
+.petal{
+  position:absolute;
+  width:14px;height:14px;
+  pointer-events:none;
+  z-index:0;
+  opacity:0;
 }
 
 /* ---------- HERO ---------- */
@@ -47,22 +60,22 @@ html,body{
   border:1px solid var(--border);
   border-radius:8px;
   padding:18px 20px 16px;
+  z-index:1;
 }
 .hero::after{
   content:'';
   position:absolute;
   inset:0;
-  background:linear-gradient(120deg,rgba(59,130,246,.07) 0%,transparent 45%,rgba(245,158,11,.05) 100%);
+  background:linear-gradient(120deg,rgba(214,51,108,.05) 0%,transparent 45%,rgba(201,134,31,.05) 100%);
   pointer-events:none;
 }
-.wheel{
+.branch{
   position:absolute;
-  right:-50px;
-  top:50%;
-  transform:translateY(-50%);
-  width:280px;
-  height:280px;
-  opacity:.18;
+  right:-30px;
+  top:-24px;
+  width:340px;
+  height:210px;
+  opacity:.5;
   pointer-events:none;
 }
 .eyebrow{
@@ -78,19 +91,19 @@ html,body{
 }
 .eyebrow::before{content:'';width:18px;height:1px;background:var(--gold);}
 .hero h1{
-  font-size:28px;
+  font-family:'Fraunces','Inter',Georgia,serif;
+  font-size:30px;
   font-weight:800;
-  letter-spacing:.14em;
-  color:#fff;
+  letter-spacing:.08em;
+  color:var(--title);
   line-height:1.05;
 }
-.hero h1 .dash{color:var(--blue);font-weight:400;margin:0 6px;}
 .hero .sub{
   font-size:11px;
   font-weight:600;
   letter-spacing:.24em;
   text-transform:uppercase;
-  color:var(--blue);
+  color:var(--pink);
   margin-top:5px;
 }
 .chips{
@@ -102,7 +115,7 @@ html,body{
 }
 .chip{
   border:1px solid var(--border);
-  background:rgba(11,14,20,.7);
+  background:rgba(255,249,250,.85);
   border-radius:999px;
   padding:5px 12px;
   display:flex;
@@ -114,10 +127,10 @@ html,body{
   font-weight:700;
   letter-spacing:.18em;
   text-transform:uppercase;
-  color:var(--blue);
+  color:var(--pink);
 }
-.chip .v{font-size:10px;font-weight:600;color:var(--body);white-space:nowrap;}
-.chip.gold{border-color:rgba(245,158,11,.45);}
+.chip .v{font-size:10px;font-weight:600;color:var(--ink);white-space:nowrap;}
+.chip.gold{border-color:rgba(201,134,31,.45);}
 .chip.gold .k{color:var(--gold);}
 
 /* ---------- SECTION LABELS ---------- */
@@ -126,6 +139,8 @@ html,body{
   align-items:center;
   gap:10px;
   margin:13px 0 7px;
+  position:relative;
+  z-index:1;
 }
 .seclabel .num{
   font-size:9px;
@@ -138,7 +153,7 @@ html,body{
   font-weight:700;
   letter-spacing:.26em;
   text-transform:uppercase;
-  color:var(--blue);
+  color:var(--pink);
 }
 .seclabel .rule{flex:1;height:1px;background:var(--border);}
 
@@ -151,6 +166,8 @@ table{
   border:1px solid var(--border);
   border-radius:8px;
   overflow:hidden;
+  position:relative;
+  z-index:1;
 }
 col.c1{width:12.5%} col.c2{width:15%} col.c3{width:8.5%} col.c4{width:20%} col.c5{width:44%}
 thead th{
@@ -158,10 +175,10 @@ thead th{
   font-weight:700;
   letter-spacing:.2em;
   text-transform:uppercase;
-  color:var(--blue);
+  color:var(--pink);
   text-align:left;
   padding:7px 10px;
-  background:#0E1319;
+  background:#FBEDF1;
   border-bottom:1px solid var(--border);
 }
 tbody td{
@@ -169,15 +186,15 @@ tbody td{
   font-size:9.5px;
   line-height:1.35;
   vertical-align:middle;
-  border-bottom:1px solid #1A212B;
+  border-bottom:1px solid #F7E4E9;
   height:33px;
 }
 tbody tr:last-child td{border-bottom:none;}
 tbody tr:nth-child(even) td{background:var(--zebra);}
-td.planet{font-weight:700;font-size:10px;color:#fff;letter-spacing:.03em;}
-td.planet .glyph{color:var(--blue);margin-right:6px;font-weight:400;}
-td.sign{font-weight:600;color:var(--body);}
-td.house{font-weight:700;color:var(--blue);}
+td.planet{font-weight:700;font-size:10px;color:var(--title);letter-spacing:.03em;}
+td.planet .glyph{color:var(--pink);margin-right:6px;font-weight:400;}
+td.sign{font-weight:600;color:var(--ink);}
+td.house{font-weight:700;color:var(--pink);}
 .tag{
   display:inline-block;
   font-size:7.5px;
@@ -186,33 +203,32 @@ td.house{font-weight:700;color:var(--blue);}
   text-transform:uppercase;
   padding:2.5px 8px;
   border-radius:999px;
-  border:1px solid rgba(245,158,11,.5);
+  border:1px solid rgba(201,134,31,.5);
   color:var(--gold);
-  background:rgba(245,158,11,.08);
+  background:rgba(201,134,31,.08);
   white-space:nowrap;
 }
 .tag.blue{
-  border-color:rgba(59,130,246,.45);
-  color:#7EB0FA;
-  background:rgba(59,130,246,.08);
+  border-color:rgba(214,51,108,.4);
+  color:var(--deep);
+  background:rgba(214,51,108,.07);
 }
-td.effect{
-  color:var(--muted);
-  font-size:9px;
-}
+td.effect{color:var(--muted);font-size:9px;}
 td.effect .clamp{
   display:-webkit-box;
   -webkit-line-clamp:2;
   -webkit-box-orient:vertical;
   overflow:hidden;
 }
-td.effect b{color:var(--body);font-weight:600;}
+td.effect b{color:var(--ink);font-weight:600;}
 
 /* ---------- HOUSE CARDS ---------- */
 .houses{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:8px;
+  position:relative;
+  z-index:1;
 }
 .hcard{
   background:var(--card);
@@ -227,22 +243,24 @@ td.effect b{color:var(--body);font-weight:600;}
   position:absolute;
   top:0;left:0;right:0;
   height:2px;
-  background:linear-gradient(90deg,var(--blue),transparent 70%);
+  background:linear-gradient(90deg,var(--pink),transparent 70%);
 }
 .hcard .hnum{
+  font-family:'Fraunces','Inter',Georgia,serif;
   font-size:22px;
   font-weight:800;
-  color:rgba(59,130,246,.16);
+  color:rgba(214,51,108,.14);
   position:absolute;
   top:5px;right:9px;
   line-height:1;
 }
 .hcard .hh{
-  font-size:9.5px;
-  font-weight:800;
-  letter-spacing:.14em;
+  font-family:'Fraunces','Inter',Georgia,serif;
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.1em;
   text-transform:uppercase;
-  color:#fff;
+  color:var(--title);
 }
 .hcard .hsign{
   font-size:7.5px;
@@ -257,15 +275,16 @@ td.effect b{color:var(--body);font-weight:600;}
   line-height:1.45;
   color:var(--muted);
 }
-.hcard p b{color:var(--body);font-weight:600;}
+.hcard p b{color:var(--ink);font-weight:600;}
 
 /* ---------- EXECUTIVE CALLOUT ---------- */
 .callout{
-  border:1px solid rgba(245,158,11,.55);
-  background:linear-gradient(135deg,rgba(245,158,11,.06),rgba(22,27,34,.9) 40%);
+  border:1px solid rgba(201,134,31,.5);
+  background:linear-gradient(135deg,rgba(201,134,31,.06),rgba(253,242,245,.9) 40%);
   border-radius:8px;
   padding:13px 16px;
   position:relative;
+  z-index:1;
 }
 .callout::before{
   content:'';
@@ -289,10 +308,11 @@ td.effect b{color:var(--body);font-weight:600;}
   margin-bottom:4px;
 }
 .callout .arch{
-  font-size:13px;
+  font-family:'Fraunces','Inter',Georgia,serif;
+  font-size:14px;
   font-weight:800;
-  letter-spacing:.05em;
-  color:#fff;
+  letter-spacing:.04em;
+  color:var(--title);
   margin-bottom:4px;
 }
 .callout p{
@@ -300,8 +320,9 @@ td.effect b{color:var(--body);font-weight:600;}
   line-height:1.5;
   color:var(--muted);
 }
-.callout p b{color:var(--body);font-weight:600;}
+.callout p b{color:var(--ink);font-weight:600;}
 .callout p .au{color:var(--gold);font-weight:600;}
+.callout p .pk{color:var(--deep);font-weight:600;}
 
 /* ---------- FOOTER ---------- */
 .foot{
@@ -313,38 +334,11 @@ td.effect b{color:var(--body);font-weight:600;}
   gap:14px;
   font-size:7px;
   letter-spacing:.06em;
-  color:#5B6B7E;
+  color:#B295A0;
   line-height:1.5;
+  position:relative;
+  z-index:1;
 }
-
-/* ---------- SCREEN-ONLY MOTION ---------- */
-@media screen{
-  .hero h1,.hero .sub,.hero .eyebrow{
-    animation:lineup .8s cubic-bezier(.22,1,.36,1) both;
-  }
-  .hero .sub{animation-delay:.12s}
-  .hero .eyebrow{animation-delay:0s}
-  .hero h1{animation-delay:.06s}
-  .chips .chip{animation:lineup .7s cubic-bezier(.22,1,.36,1) both;}
-  .chips .chip:nth-child(1){animation-delay:.22s}
-  .chips .chip:nth-child(2){animation-delay:.28s}
-  .chips .chip:nth-child(3){animation-delay:.34s}
-  .chips .chip:nth-child(4){animation-delay:.40s}
-  tbody tr{animation:fadein .6s ease both;}
-  tbody tr:nth-child(1){animation-delay:.35s} tbody tr:nth-child(2){animation-delay:.40s}
-  tbody tr:nth-child(3){animation-delay:.45s} tbody tr:nth-child(4){animation-delay:.50s}
-  tbody tr:nth-child(5){animation-delay:.55s} tbody tr:nth-child(6){animation-delay:.60s}
-  tbody tr:nth-child(7){animation-delay:.65s} tbody tr:nth-child(8){animation-delay:.70s}
-  tbody tr:nth-child(9){animation-delay:.75s}
-  .hcard{animation:lineup .7s cubic-bezier(.22,1,.36,1) both;}
-  .hcard:nth-child(1){animation-delay:.55s} .hcard:nth-child(2){animation-delay:.62s}
-  .hcard:nth-child(3){animation-delay:.69s} .hcard:nth-child(4){animation-delay:.76s}
-  .callout{animation:lineup .8s cubic-bezier(.22,1,.36,1) both;animation-delay:.85s}
-  .wheel{animation:spin 120s linear infinite;}
-}
-@keyframes lineup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadein{from{opacity:0}to{opacity:1}}
-@keyframes spin{from{transform:translateY(-50%) rotate(0deg)}to{transform:translateY(-50%) rotate(360deg)}}
 
 /* ---------- TOOLBAR (screen only) ---------- */
 .toolbar{
@@ -355,12 +349,12 @@ td.effect b{color:var(--body);font-weight:600;}
   display:flex;
   gap:8px;
   padding:8px;
-  background:rgba(22,27,34,.85);
+  background:rgba(255,255,255,.88);
   border:1px solid var(--border);
   border-radius:999px;
   backdrop-filter:blur(16px);
   -webkit-backdrop-filter:blur(16px);
-  box-shadow:0 12px 40px rgba(0,0,0,.55);
+  box-shadow:0 12px 40px rgba(157,43,80,.25);
   z-index:100;
 }
 .tb-btn{
@@ -380,12 +374,50 @@ td.effect b{color:var(--body);font-weight:600;}
   transition:background-color .2s,color .2s,border-color .2s,transform .2s;
 }
 .tb-btn:hover{transform:translateY(-1px);}
-.tb-btn.primary{background:var(--blue);color:#fff;}
-.tb-btn.primary:hover{background:#2563EB;}
-.tb-btn.secondary{background:transparent;color:var(--body);border-color:var(--border);}
-.tb-btn.secondary:hover{border-color:var(--blue);color:#fff;}
-.tb-btn.ghost{background:rgba(245,158,11,.1);color:var(--gold);border-color:rgba(245,158,11,.4);}
-.tb-btn.ghost:hover{border-color:var(--gold);}
+.tb-btn.primary{background:var(--pink);color:#fff;}
+.tb-btn.primary:hover{background:#B82A5C;}
+.tb-btn.secondary{background:transparent;color:var(--ink);border-color:var(--border);}
+.tb-btn.secondary:hover{border-color:var(--pink);color:var(--deep);}
+.tb-btn.ghost{background:rgba(11,14,20,.06);color:#161B22;border-color:#C9CFD8;}
+.tb-btn.ghost:hover{border-color:#161B22;}
+
+/* ---------- SCREEN-ONLY MOTION ---------- */
+@media screen{
+  .hero h1,.hero .sub,.hero .eyebrow{animation:lineup .8s cubic-bezier(.22,1,.36,1) both;}
+  .hero .eyebrow{animation-delay:0s}
+  .hero h1{animation-delay:.06s}
+  .hero .sub{animation-delay:.12s}
+  .chips .chip{animation:lineup .7s cubic-bezier(.22,1,.36,1) both;}
+  .chips .chip:nth-child(1){animation-delay:.22s}
+  .chips .chip:nth-child(2){animation-delay:.28s}
+  .chips .chip:nth-child(3){animation-delay:.34s}
+  .chips .chip:nth-child(4){animation-delay:.40s}
+  tbody tr{animation:fadein .6s ease both;}
+  tbody tr:nth-child(1){animation-delay:.35s} tbody tr:nth-child(2){animation-delay:.40s}
+  tbody tr:nth-child(3){animation-delay:.45s} tbody tr:nth-child(4){animation-delay:.50s}
+  tbody tr:nth-child(5){animation-delay:.55s} tbody tr:nth-child(6){animation-delay:.60s}
+  tbody tr:nth-child(7){animation-delay:.65s} tbody tr:nth-child(8){animation-delay:.70s}
+  tbody tr:nth-child(9){animation-delay:.75s}
+  .hcard{animation:lineup .7s cubic-bezier(.22,1,.36,1) both;}
+  .hcard:nth-child(1){animation-delay:.55s} .hcard:nth-child(2){animation-delay:.62s}
+  .hcard:nth-child(3){animation-delay:.69s} .hcard:nth-child(4){animation-delay:.76s}
+  .callout{animation:lineup .8s cubic-bezier(.22,1,.36,1) both;animation-delay:.85s}
+  .branch{animation:sway 9s ease-in-out infinite;transform-origin:right top;}
+  .petal{animation:drift 11s linear infinite;}
+  .petal.p2{animation-delay:2.5s;animation-duration:13s;}
+  .petal.p3{animation-delay:5s;animation-duration:10s;}
+  .petal.p4{animation-delay:7.5s;animation-duration:14s;}
+  .petal.p5{animation-delay:1.2s;animation-duration:12s;}
+}
+@keyframes lineup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@keyframes sway{0%,100%{transform:rotate(0deg)}50%{transform:rotate(1.6deg)}}
+@keyframes drift{
+  0%{transform:translate(0,-20px) rotate(0deg);opacity:0}
+  8%{opacity:.7}
+  90%{opacity:.5}
+  100%{transform:translate(-140px,420px) rotate(300deg);opacity:0}
+}
 
 /* ---------- PRINT ---------- */
 @page{size:A4;margin:12mm;}
@@ -397,9 +429,10 @@ td.effect b{color:var(--body);font-weight:600;}
     margin:0;
     padding:0;
     box-shadow:none;
+    overflow:visible;
   }
-  .wheel{animation:none;transform:translateY(-50%);}
-  .toolbar{display:none !important;}
+  .toolbar,.petal{display:none !important;}
+  .branch{animation:none;}
   *{animation:none !important;}
 }
 </style>
@@ -407,28 +440,39 @@ td.effect b{color:var(--body);font-weight:600;}
 <body>
 <div class="sheet">
 
+  <svg class="petal" style="left:18%;top:0" viewBox="0 0 20 20"><path d="M10 1 C15 5 16 12 10 19 C4 12 5 5 10 1Z" fill="#F5AFC4"/></svg>
+  <svg class="petal p2" style="left:46%;top:0" viewBox="0 0 20 20"><path d="M10 1 C15 5 16 12 10 19 C4 12 5 5 10 1Z" fill="#F8C3D3"/></svg>
+  <svg class="petal p3" style="left:70%;top:0" viewBox="0 0 20 20"><path d="M10 1 C15 5 16 12 10 19 C4 12 5 5 10 1Z" fill="#F19DB6"/></svg>
+  <svg class="petal p4" style="left:88%;top:0" viewBox="0 0 20 20"><path d="M10 1 C15 5 16 12 10 19 C4 12 5 5 10 1Z" fill="#F8C3D3"/></svg>
+  <svg class="petal p5" style="left:32%;top:0" viewBox="0 0 20 20"><path d="M10 1 C15 5 16 12 10 19 C4 12 5 5 10 1Z" fill="#F5AFC4"/></svg>
+
   <!-- HERO -->
   <header class="hero">
-    <svg class="wheel" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="200" cy="200" r="192" stroke="#3B82F6" stroke-width="1"/>
-      <circle cx="200" cy="200" r="158" stroke="#3B82F6" stroke-width="1"/>
-      <circle cx="200" cy="200" r="112" stroke="#F59E0B" stroke-width="1"/>
-      <circle cx="200" cy="200" r="64" stroke="#3B82F6" stroke-width="1"/>
-      <g stroke="#3B82F6" stroke-width="1">
-        <line x1="200" y1="8" x2="200" y2="392"/>
-        <line x1="8" y1="200" x2="392" y2="200"/>
-        <line x1="34" y1="104" x2="366" y2="296"/>
-        <line x1="34" y1="296" x2="366" y2="104"/>
-        <line x1="104" y1="34" x2="296" y2="366"/>
-        <line x1="296" y1="34" x2="104" y2="366"/>
-      </g>
-      <g stroke="#F59E0B" stroke-width="2">
-        <line x1="200" y1="8" x2="200" y2="20"/><line x1="200" y1="380" x2="200" y2="392"/>
-        <line x1="8" y1="200" x2="20" y2="200"/><line x1="380" y1="200" x2="392" y2="200"/>
-      </g>
-      <circle cx="200" cy="200" r="4" fill="#F59E0B"/>
+    <svg class="branch" viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <g id="bloom">
+          <ellipse cx="0" cy="-8" rx="5" ry="8.5" fill="#F7B8C8"/>
+          <ellipse cx="7.6" cy="-2.5" rx="5" ry="8.5" fill="#F9C9D6" transform="rotate(72)"/>
+          <ellipse cx="4.7" cy="6.5" rx="5" ry="8.5" fill="#F7B8C8" transform="rotate(144)"/>
+          <ellipse cx="-4.7" cy="6.5" rx="5" ry="8.5" fill="#F9C9D6" transform="rotate(216)"/>
+          <ellipse cx="-7.6" cy="-2.5" rx="5" ry="8.5" fill="#F7B8C8" transform="rotate(288)"/>
+          <circle r="3" fill="#E8829E"/>
+        </g>
+      </defs>
+      <path d="M500 30 C420 60 340 95 260 130 C190 160 110 195 20 260" stroke="#B98A74" stroke-width="5" stroke-linecap="round"/>
+      <path d="M330 100 C310 130 300 155 296 185" stroke="#B98A74" stroke-width="3" stroke-linecap="round"/>
+      <path d="M180 190 C170 215 168 235 172 258" stroke="#B98A74" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M420 62 C412 85 410 100 414 118" stroke="#B98A74" stroke-width="2.5" stroke-linecap="round"/>
+      <use href="#bloom" transform="translate(262 128) scale(1.15)"/>
+      <use href="#bloom" transform="translate(298 188) scale(.95) rotate(20)"/>
+      <use href="#bloom" transform="translate(332 98) scale(.8) rotate(45)"/>
+      <use href="#bloom" transform="translate(416 120) scale(1) rotate(10)"/>
+      <use href="#bloom" transform="translate(424 60) scale(.7) rotate(60)"/>
+      <use href="#bloom" transform="translate(174 260) scale(.9) rotate(35)"/>
+      <use href="#bloom" transform="translate(120 218) scale(.65) rotate(80)"/>
+      <use href="#bloom" transform="translate(60 244) scale(.8) rotate(15)"/>
     </svg>
-    <div class="eyebrow">Confidential · Natal Intelligence Dossier</div>
+    <div class="eyebrow">Confidential · Natal Intelligence Dossier · Sakura Edition</div>
     <h1>SAURABH</h1>
     <div class="sub">Master Astrological Chart &amp; Planetary Architecture</div>
     <div class="chips">
@@ -553,25 +597,25 @@ td.effect b{color:var(--body);font-weight:600;}
       </div>
       <div>
         <div class="lbl">Operational Directive</div>
-        <p><b>Monetize discernment.</b> Enter markets through partnerships, never alone — the <span class="au">7th house is the profit centre</span>. Systematize gains through long-cycle Saturn structures; deploy Rahu's 5th-house creativity for asymmetric upside, and let Ketu keep the network small, senior and sovereign.</p>
+        <p><b>Monetize discernment.</b> Enter markets through partnerships, never alone — the <span class="pk">7th house is the profit centre</span>. Systematize gains through long-cycle Saturn structures; deploy Rahu's 5th-house creativity for asymmetric upside, and let Ketu keep the network small, senior and sovereign.</p>
       </div>
     </div>
   </div>
 
   <div class="foot">
     <span>† Mars &amp; Jupiter retained as stylized placeholders per brief — exact signs are a 30-second swap. Ascendant-reconciled: Virgo = 7H · Leo = 6H · Capricorn = 11H · Rahu 5H / Ketu 11H.</span>
-    <span style="white-space:nowrap">A4 Portrait · Print-Ready · print-color-adjust: exact</span>
+    <span style="white-space:nowrap">Sakura Edition · A4 Portrait · print-color-adjust: exact</span>
   </div>
 
 </div>
 
 <div class="toolbar">
-  <a class="tb-btn primary" href="/SAURABH-Master-Chart-Dark.pdf" download data-testid="download-pdf-btn">
+  <a class="tb-btn primary" href="/SAURABH-Master-Chart-Sakura.pdf" download data-testid="download-pdf-btn">
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
     Download PDF
   </a>
   <button class="tb-btn secondary" onclick="window.print()" data-testid="print-pdf-btn">Print to PDF</button>
-  <a class="tb-btn ghost" href="/master-chart-sakura.html" data-testid="sakura-edition-link">Sakura Edition</a>
+  <a class="tb-btn ghost" href="/master-chart.html" data-testid="dark-edition-link">Dark Edition</a>
 </div>
 </body>
 </html>
