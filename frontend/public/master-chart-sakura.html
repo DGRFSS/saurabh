@@ -392,6 +392,52 @@ td.effect b{color:var(--ink);font-weight:600;}
   .dedication{animation:lineup .8s cubic-bezier(.22,1,.36,1) both;animation-delay:.15s;}
 }
 
+/* ---------- PAGE 3 ---------- */
+.dashacard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 16px;position:relative;z-index:1;}
+.dbar{display:flex;height:42px;border-radius:6px;overflow:hidden;border:1px solid var(--border);position:relative;}
+.dseg{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-width:0;background:var(--card);}
+.dseg:nth-child(odd){background:#FDF2F5;}
+.dseg.cur{background:rgba(214,51,108,.13);}
+.dseg.jup{background:rgba(201,134,31,.14);}
+.dseg .dn{font-size:8px;font-weight:800;letter-spacing:.1em;color:var(--ink);white-space:nowrap;}
+.dseg .dy{font-size:6.5px;color:var(--muted);white-space:nowrap;}
+.dyears{display:flex;margin-top:4px;}
+.dyears span{font-size:6.5px;color:var(--muted);letter-spacing:.05em;}
+.dnow{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--gold);z-index:2;}
+.dnow i{position:absolute;top:-3px;left:4px;font-style:normal;font-size:6px;font-weight:800;letter-spacing:.15em;color:var(--gold);}
+.abar{display:flex;height:24px;border-radius:4px;overflow:hidden;border:1px solid var(--border);margin-top:10px;}
+.aseg{display:flex;align-items:center;justify-content:center;font-size:6.5px;font-weight:700;color:var(--muted);min-width:0;border-right:1px solid #F7E4E9;background:var(--card);}
+.aseg:last-child{border-right:none;}
+.aseg.cur{background:rgba(201,134,31,.2);color:var(--gold);}
+.acap{font-size:7px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:5px;}
+.dwins{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;}
+.dwin{background:#FBEDF1;border:1px solid var(--border);border-radius:6px;padding:8px 10px;}
+.dwin .wk{font-size:7px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+.dwin p{font-size:8.5px;line-height:1.6;color:var(--muted);}
+.dwin p b{color:var(--ink);font-weight:600;}
+.yogacard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 16px;position:relative;z-index:1;}
+.yoga{display:grid;grid-template-columns:170px 1fr 64px;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid #F7E4E9;}
+.yoga:last-child{border-bottom:none;}
+.yname{font-size:9.5px;font-weight:800;color:var(--title);line-height:1.3;}
+.yname .ysub{display:block;font-size:6.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-top:2px;}
+.ytext{font-size:8.5px;line-height:1.5;color:var(--muted);}
+.ytext b{color:var(--ink);font-weight:600;}
+.ymeter{display:flex;gap:4px;justify-content:flex-end;}
+.ymeter i{width:7px;height:7px;border-radius:50%;background:#F3DBE2;}
+.ymeter i.on{background:var(--gold);}
+.numgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;position:relative;z-index:1;}
+.ncard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 11px 11px;position:relative;overflow:hidden;}
+.ncard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent 70%);}
+.nval{font-size:22px;font-weight:800;color:var(--gold);line-height:1;}
+.nval small{font-size:10px;font-weight:700;color:var(--muted);}
+.nlab{font-size:6.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin:5px 0 4px;}
+.ntxt{font-size:8px;line-height:1.55;color:var(--muted);}
+.numsyn{margin-top:10px;border:1px solid rgba(201,134,31,.45);background:rgba(201,134,31,.06);border-radius:6px;padding:10px 14px;font-size:8.5px;line-height:1.5;color:var(--muted);position:relative;z-index:1;}
+.numsyn b{color:var(--ink);font-weight:700;}
+@media screen{
+  .dashacard,.yogacard,.numgrid,.numsyn{animation:lineup .8s cubic-bezier(.22,1,.36,1) both;}
+}
+
 /* ---------- TOOLBAR (screen only) ---------- */
 .toolbar{
   position:fixed;
@@ -484,7 +530,7 @@ td.effect b{color:var(--ink);font-weight:600;}
     overflow:visible;
   }
   .toolbar,.petal{display:none !important;}
-  .page2{page-break-before:always;}
+  .page2,.page3{page-break-before:always;}
   .branch{animation:none;}
   *{animation:none !important;}
 }
@@ -833,6 +879,86 @@ td.effect b{color:var(--ink);font-weight:600;}
   <div class="foot">
     <span>Wheel positions plotted from Swiss Ephemeris data — houses counted whole-sign from the Pisces ascendant.</span>
     <span style="white-space:nowrap">Page 2 · Natal Wheel &amp; Dedication</span>
+  </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="sheet page3">
+  <div class="seclabel"><span class="num">06</span><span class="txt">Vimshottari Dasha Timeline</span><span class="rule"></span></div>
+  <div class="dashacard">
+    <div class="dbar">
+      <div class="dseg" style="flex-grow:2.6" title="Moon 2000–2003"><span class="dn">☽</span></div>
+      <div class="dseg" style="flex-grow:7"><span class="dn">MARS</span><span class="dy">7y</span></div>
+      <div class="dseg cur" style="flex-grow:18"><span class="dn">RAHU</span><span class="dy">18y · current</span></div>
+      <div class="dseg jup" style="flex-grow:16"><span class="dn">JUPITER</span><span class="dy">16y · prime</span></div>
+      <div class="dseg" style="flex-grow:19"><span class="dn">SATURN</span><span class="dy">19y</span></div>
+      <div class="dnow" style="left:41.3%"><i>NOW</i></div>
+    </div>
+    <div class="dyears">
+      <span style="flex-grow:2.6">2000</span><span style="flex-grow:7">2003</span><span style="flex-grow:18">2010</span><span style="flex-grow:16">2028</span><span style="flex-grow:19">2044</span><span>2063 → Mercury</span>
+    </div>
+    <div class="abar">
+      <div class="aseg" style="flex-grow:2.7">RA</div>
+      <div class="aseg" style="flex-grow:2.4">JU</div>
+      <div class="aseg" style="flex-grow:2.85">SA</div>
+      <div class="aseg" style="flex-grow:2.55">ME</div>
+      <div class="aseg" style="flex-grow:1.05">KE</div>
+      <div class="aseg" style="flex-grow:3">VE</div>
+      <div class="aseg" style="flex-grow:0.9">SU</div>
+      <div class="aseg cur" style="flex-grow:1.5">MO</div>
+      <div class="aseg" style="flex-grow:1.26">MA</div>
+    </div>
+    <div class="acap">Rahu mahādaśā sub-periods · Now: Rahu–Moon (Aug 2025 – Feb 2027) → Next: Rahu–Mars (Feb 2027 – Mar 2028)</div>
+    <div class="dwins">
+      <div class="dwin" data-testid="dasha-window-now"><div class="wk">Now · Rahu–Moon → Feb 2027</div><p><b>Visibility &amp; alliance surge.</b> The 7H Moon activates partners, audiences and market instinct — negotiate, publish, be seen.</p></div>
+      <div class="dwin"><div class="wk">2027–28 · Rahu–Mars</div><p><b>Execution sprint.</b> NBRY Mars fires — ship aggressively and close positions before the daśā turns.</p></div>
+      <div class="dwin"><div class="wk">2028–2044 · Jupiter Mahādaśā</div><p><b>The prime ascent.</b> Your 1st &amp; 10th lord opens a 16-year career &amp; wealth window. Build now, harvest then.</p></div>
+    </div>
+  </div>
+
+  <div class="seclabel"><span class="num">07</span><span class="txt">Yoga Panel · Strength Ratings</span><span class="rule"></span></div>
+  <div class="yogacard">
+    <div class="yoga">
+      <div class="yname">Neecha Bhaṅga Rāja Yoga<span class="ysub">Mars · Cancer 5H</span></div>
+      <p class="ytext"><b>Setback engineered into strength.</b> Debilitated Mars is rescued by its dispositor Moon in a kendra — early friction matures into rare, patient power that peaks with age.</p>
+      <div class="ymeter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+    </div>
+    <div class="yoga">
+      <div class="yname">Budha-Āditya Yoga<span class="ysub">Sun + Mercury · Cancer 5H</span></div>
+      <p class="ytext"><b>Intellect fused with authority.</b> A clean, uncombust conjunction — administrative brilliance, sharp analysis, and a reputation built on intelligence.</p>
+      <div class="ymeter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+    </div>
+    <div class="yoga">
+      <div class="yname">Dharma-Trikoṇa Rāja Yoga<span class="ysub">9th lord Mars in the 5th</span></div>
+      <p class="ytext"><b>Fortune through creation.</b> The luck-lord sits in the house of innovation — speculation, original work and ventures carry destiny's favour.</p>
+      <div class="ymeter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+    </div>
+    <div class="yoga">
+      <div class="yname">Guru-Śani Saṅgama<span class="ysub">Jupiter + Saturn · Taurus 3H</span></div>
+      <p class="ytext"><b>The great conjunction of 2000.</b> Discipline welded to wisdom in the skills house — craft compounds into institutions over decades.</p>
+      <div class="ymeter"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+    </div>
+    <div class="yoga">
+      <div class="yname">Sūrya-Rāhu Sambandha<span class="ysub">Sun with Rahu · 5H · watch</span></div>
+      <p class="ytext"><b>Amplified ambition, shadowed ego.</b> Enormous unconventional drive; guard against overreach, shortcuts and authority clashes.</p>
+      <div class="ymeter"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
+
+  <div class="seclabel"><span class="num">08</span><span class="txt">Numerology Signature</span><span class="rule"></span></div>
+  <div class="numgrid">
+    <div class="ncard"><div class="nval">4</div><div class="nlab">Moolānk · Root</div><div class="ntxt">The Builder — structure, method, unconventional systems. Rahu's number, echoing your 5H Rahu.</div></div>
+    <div class="ncard"><div class="nval">5</div><div class="nlab">Bhāgyānk · Destiny</div><div class="ntxt">The Versatile — commerce, communication, motion. Mercury's number mirrors your 5H Mercury.</div></div>
+    <div class="ncard"><div class="nval">7</div><div class="nlab">Expression · Saurabh</div><div class="ntxt">The Seeker — analysis, hidden knowledge, deep tech. Ketu's number; the researcher's signature.</div></div>
+    <div class="ncard"><div class="nval">5</div><div class="nlab">Soul Urge</div><div class="ntxt">Inner engine: autonomy and change — thrives on movement, starves on routine.</div></div>
+    <div class="ncard"><div class="nval">2</div><div class="nlab">Personality</div><div class="ntxt">Outer read: measured, diplomatic — Moon-calm at the negotiating table.</div></div>
+    <div class="ncard"><div class="nval">22<small>/4</small></div><div class="nlab">Personal Year 2026</div><div class="ntxt">Master Builder vibration — lay foundations this year that outlive the decade.</div></div>
+  </div>
+  <div class="numsyn"><b>The 4–5–7 triad.</b> A disciplined builder (4) with a merchant's adaptability (5) and a mystic-analyst's depth (7) — the numbers and the natal chart tell one story: engineered creativity, monetized through original systems.</div>
+
+  <div class="foot">
+    <span>Daśā computed from Moon in Hasta nakṣatra (lord Moon, balance 2.61y at birth) · 365.25-day years · Numerology: Pythagorean name values, Vedic moolānk/bhāgyānk.</span>
+    <span style="white-space:nowrap">Page 3 · Timing, Yogas &amp; Numbers</span>
   </div>
 </div>
 

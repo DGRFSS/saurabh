@@ -33,6 +33,8 @@ A single, print-ready, self-contained HTML document styled as a modern-executive
 3. Letter variant: replace size:A4→size:Letter + append compact print CSS (tbody td padding 6.5px, seclabel 12px 0 6px, hero 18px 20px 16px)
 4. google-chrome --headless --print-to-pdf, verify 2 pages via pymupdf
 
+- **Iteration 4 (page 3: timing, yogas, numbers)**: Added PAGE 3 to both editions — (06) Vimshottari Dasha Timeline: Moon MD 2000–2003 → Mars 2003–2010 → Rahu 2010–2028 (current; antardasha Rahu–Moon Aug 2025–Feb 2027, then Rahu–Mars to Mar 2028) → Jupiter 2028–2044 (prime window, 1st/10th lord) → Saturn 2044–2063; visual MD bar with NOW marker + AD strip + 3 window cards. (07) Yoga Panel: Neecha Bhaṅga Rāja Yoga (4/5), Budha-Āditya (4/5), Dharma-Trikoṇa Rāja Yoga (4/5), Guru-Śani Saṅgama (3/5), Sūrya-Rāhu Sambandha (2/5, watch) with dot meters. (08) Numerology: Moolānk 4, Bhāgyānk 5, Expression 7 (SAURABH Pythagorean), Soul Urge 5, Personality 2, Personal Year 2026 = 22/4 + 4–5–7 synthesis strip. All 4 PDFs regenerated: 3 pages each. Testing agent iteration_4: 100% pass.
+
 ## Backlog / Next
 - P1: Swap in exact Mars & Jupiter signs/houses when provided (30-second edit in both editions' tables)
 - P2: Letter-size variant, additional theme variants
